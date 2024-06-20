@@ -1,7 +1,7 @@
-import { Typography } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const HomePage = () => {
-  return <Typography>HomePage</Typography>;
+  return <Outlet />;
 };
 
 export default HomePage;
