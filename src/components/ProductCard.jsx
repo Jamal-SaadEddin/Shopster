@@ -4,6 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import QuantitySelect from "./QuantitySelect";
 
 const ProductCard = ({ product }) => {
   return (
@@ -18,7 +19,7 @@ const ProductCard = ({ product }) => {
           boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)",
         }}
       />
-      <CardContent>
+      <CardContent sx={{ pb: 0 }}>
         <Typography gutterBottom variant="h5" component="div">
           {product.name}
         </Typography>
@@ -29,8 +30,20 @@ const ProductCard = ({ product }) => {
           ${product.price}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button variant="contained" color="warning" fullWidth>
+      <CardActions
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          rowGap: 0,
+        }}
+      >
+        <QuantitySelect />
+        <Button
+          variant="contained"
+          color="warning"
+          fullWidth
+          sx={{ ml: "0px !important" }}
+        >
           Add to cart
         </Button>
       </CardActions>
