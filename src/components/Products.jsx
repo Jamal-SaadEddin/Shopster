@@ -5,14 +5,13 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import PASTA from "../assets/pasta.webp";
 
-const Products = () => {
+const Products = ({ products }) => {
   return (
     <Grid container spacing={{ xs: 3, md: 4, lg: 5, xl: 7 }}>
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((value) => (
+      {products.map((product) => (
         <Grid
-          key={value}
+          key={product.id}
           item
           sx={{
             width: { xs: "100%", sm: "50%", md: "33.333333%" },
@@ -22,9 +21,9 @@ const Products = () => {
           <Card>
             <CardMedia
               component="img"
-              alt="pasta"
+              alt={product.name}
               height="220"
-              image={PASTA}
+              image={product.imageUrl}
               sx={{
                 objectFit: "contain",
                 boxShadow: "0px 1px 0px rgba(0, 0, 0, 0.1)",
@@ -32,13 +31,13 @@ const Products = () => {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Pasta
+                {product.name}
               </Typography>
               <Typography gutterBottom variant="body2" color="text.secondary">
-                Pasta 400g very delecios and healthy...etc
+                {product.description}
               </Typography>
               <Typography variant="h6" color="#ED6C01">
-                $4.5
+                ${product.price}
               </Typography>
             </CardContent>
             <CardActions>

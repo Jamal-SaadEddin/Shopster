@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import APP_LOGO from "../assets/shopster-high-resolution-logo-transparent.png";
 import Products from "../components/Products";
+import { products } from "./../constants/products";
 
 const MainPage = () => {
   return (
@@ -13,7 +14,7 @@ const MainPage = () => {
       <Box mt={5}>
         <img src={APP_LOGO} alt="Shopster-logo" width={145} />
       </Box>
-      <Products />
+      <Products products={products} />
     </Box>
   );
 };
