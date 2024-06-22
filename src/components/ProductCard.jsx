@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
         <Typography gutterBottom variant="body2" color="text.secondary">
           {product.description}
         </Typography>
-        <Typography variant="h6" color="#ED6C01">
+        <Typography variant="h6" color="#ed6c02">
           ${product.price}
         </Typography>
       </CardContent>
@@ -38,12 +38,7 @@ const ProductCard = ({ product }) => {
         }}
       >
         <QuantitySelect />
-        <Button
-          variant="contained"
-          color="warning"
-          fullWidth
-          sx={{ ml: "0px !important" }}
-        >
+        <Button variant="contained" fullWidth sx={{ ml: "0px !important" }}>
           Add to cart
         </Button>
       </CardActions>
