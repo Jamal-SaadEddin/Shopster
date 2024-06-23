@@ -1,18 +1,18 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import theme from "../theme.js";
+import Navbar from "./components/Navbar.jsx";
+import MainPage from "./pages/MainPage.jsx";
+import theme from "./theme.js";
 
-const HomePage = () => {
+const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Navbar />
-        <Outlet />
+        <MainPage />
       </ThemeProvider>
     </>
   );
 };
 
-export default HomePage;
+export default App;
