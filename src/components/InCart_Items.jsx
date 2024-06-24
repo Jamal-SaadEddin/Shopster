@@ -21,10 +21,10 @@ const InCart_Items = () => {
   );
 
   return (
-    <Grid container pt={2} gap={2}>
+    <Grid container pt={2} gap={{ xs: 5, md: 2 }}>
       {cart.map((item) => (
         <Grid item width="100%" key={item.id}>
-          <Stack direction="row" gap={5}>
+          <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 1, md: 5 }}>
             <Stack
               direction="row"
               columnGap={2}
@@ -66,7 +66,10 @@ const InCart_Items = () => {
                 </IconButton>
               </Stack>
             </Stack>
-            <Stack direction="column" justifyContent="center">
+            <Stack
+              direction="column"
+              justifyContent={{ xs: "start", md: "center" }}
+            >
               <Button
                 variant="contained"
                 color="error"
@@ -78,7 +81,7 @@ const InCart_Items = () => {
               </Button>
             </Stack>
           </Stack>
-          <Divider />
+          <Divider sx={{ mt: { xs: 3, md: 0 } }} />
         </Grid>
       ))}
       <Grid item width="100%">
