@@ -1,4 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
 import { CartProvider } from "./contexts/CartContext.js";
 import MainPage from "./pages/MainPage.jsx";
@@ -12,6 +13,7 @@ const App = () => {
         <CartProvider>
           <Navbar />
           <MainPage />
+          <Footer />
         </CartProvider>
       </ThemeProvider>
     </>
