@@ -16,6 +16,7 @@ import { alpha, styled } from "@mui/material/styles";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import APP_LOGO from "../assets/shopster-favicon-white.png";
+import { useCart } from "../contexts/CartContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const cart = useCart();
+  const cartItemsCount = cart.reduce((acc, item) => (acc += item.count), 0);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -185,7 +188,7 @@ const Navbar = () => {
               color="inherit"
               sx={{ display: { xs: "none", md: "block" } }}
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={cartItemsCount} color="error">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>

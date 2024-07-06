@@ -4,9 +4,14 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { useCartDispatch } from "../contexts/CartContext";
 import QuantitySelect from "./QuantitySelect";
 
 const ProductCard = ({ product }) => {
+  const [quantity, setQuantity] = useState("1");
+  const cartDispatch = useCartDispatch();
+
   return (
     <Card>
       <CardMedia
@@ -37,8 +42,15 @@ const ProductCard = ({ product }) => {
           rowGap: 0,
         }}
       >
-        <QuantitySelect />
-        <Button variant="contained" fullWidth sx={{ ml: "0px !important" }}>
+        <QuantitySelect quantity={quantity} onSelectQuantity={setQuantity} />
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ ml: "0px !important" }}
+          onClick={() =>
+            cartDispatch({ type: "add", ...product, count: Number(quantity) })
+          }
+        >
           Add to cart
         </Button>
       </CardActions>

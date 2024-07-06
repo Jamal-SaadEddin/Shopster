@@ -1,8 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useState } from "react";
 
-const QuantityOptions = ({ optionsCount }) => {
-  const [quantity, setQuantity] = useState(1);
+const QuantityOptions = ({ optionsCount, quantity, onSelectQuantity }) => {
   const menuItems = [];
 
   for (let i = 1; i <= optionsCount; i++) {
@@ -18,7 +16,7 @@ const QuantityOptions = ({ optionsCount }) => {
       labelId="quantity"
       id="quantity-select"
       value={quantity}
-      onChange={(e) => setQuantity(e.target.value)}
+      onChange={(e) => onSelectQuantity(e.target.value)}
       label="Quantity"
       MenuProps={{
         PaperProps: {
@@ -33,11 +31,15 @@ const QuantityOptions = ({ optionsCount }) => {
   );
 };
 
-const QuantitySelect = () => {
+const QuantitySelect = ({ quantity, onSelectQuantity }) => {
   return (
     <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }} fullWidth>
       <InputLabel id="quantity">Quantity</InputLabel>
-      <QuantityOptions optionsCount={30} />
+      <QuantityOptions
+        optionsCount={30}
+        quantity={quantity}
+        onSelectQuantity={onSelectQuantity}
+      />
     </FormControl>
   );
 };
