@@ -15,15 +15,15 @@ const AboutPage = () => {
       <h2>Technologies Used</h2>
       <ul>
         <li>
-          <Link to="https://react.dev/">ReactJs:</Link> React Context, Provider
+          <Link to="https://react.dev/" target="_blank">ReactJs:</Link> React Context, Provider
           and Reducer for managing application state.
         </li>
         <li>
-          <Link to="https://reactrouter.com/en/main">React Router DOM:</Link>{" "}
+          <Link to="https://reactrouter.com/en/main" target="_blank">React Router DOM:</Link>{" "}
           for making routes between pages.
         </li>
         <li>
-          <Link to="https://mui.com/">Material UI:</Link> Library for building
+          <Link to="https://mui.com/" target="_blank">Material UI:</Link> Library for building
           user interfaces.
         </li>
       </ul>
