@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Shopster/static/css/main.d4470d26.css",
-    "main.js": "/Shopster/static/js/main.50794ffd.js",
+    "main.js": "/Shopster/static/js/main.327600b1.js",
     "static/media/wholegrainmustard.jpg": "/Shopster/static/media/wholegrainmustard.b9dce592729e8bb7a02f.jpg",
     "static/media/darkchocolate.jpg": "/Shopster/static/media/darkchocolate.d521c6b99c9ecff4ac5f.jpg",
     "static/media/almondbutter.jpg": "/Shopster/static/media/almondbutter.a9091fd08a6421dc1486.jpg",
@@ -20,10 +20,10 @@
     "static/media/shopster-high-resolution-logo-transparent.png": "/Shopster/static/media/shopster-high-resolution-logo-transparent.f14a53f6440eeeeebb8c.png",
     "index.html": "/Shopster/index.html",
     "main.d4470d26.css.map": "/Shopster/static/css/main.d4470d26.css.map",
-    "main.50794ffd.js.map": "/Shopster/static/js/main.50794ffd.js.map"
+    "main.327600b1.js.map": "/Shopster/static/js/main.327600b1.js.map"
   },
   "entrypoints": [
     "static/css/main.d4470d26.css",
-    "static/js/main.50794ffd.js"
+    "static/js/main.327600b1.js"
   ]
 }
