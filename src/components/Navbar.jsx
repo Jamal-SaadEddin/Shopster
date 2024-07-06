@@ -117,7 +117,7 @@ const Navbar = () => {
             aria-label="open shopping cart"
             color="inherit"
           >
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={cartItemsCount} color="error">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
