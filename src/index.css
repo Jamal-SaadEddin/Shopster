@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    background-color: #F8F9FA;
+    background-color: #F8F9FA !important;
 }
 
 .nav-logo {

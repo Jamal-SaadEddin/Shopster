@@ -130,7 +130,6 @@ const Navbar = () => {
         position="sticky"
         sx={{
           px: { xs: 2, md: 10, lg: 15, xl: 35 },
-          bgcolor: "#ED6C01",
           top: 0,
           zIndex: 1000,
         }}
