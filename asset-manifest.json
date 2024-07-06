@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Shopster/static/css/main.d4470d26.css",
+    "main.js": "/Shopster/static/js/main.50794ffd.js",
+    "static/media/wholegrainmustard.jpg": "/Shopster/static/media/wholegrainmustard.b9dce592729e8bb7a02f.jpg",
+    "static/media/darkchocolate.jpg": "/Shopster/static/media/darkchocolate.d521c6b99c9ecff4ac5f.jpg",
+    "static/media/almondbutter.jpg": "/Shopster/static/media/almondbutter.a9091fd08a6421dc1486.jpg",
+    "static/media/organichoney.jpg": "/Shopster/static/media/organichoney.7e9ef12611953d254a55.jpg",
+    "static/media/quinoa.jpg": "/Shopster/static/media/quinoa.a79adbbab3a12e4c32c6.jpg",
+    "static/media/blueberryjam.jpg": "/Shopster/static/media/blueberryjam.94c33728bdcc94c1a658.jpg",
+    "static/media/oliveoil.jpg": "/Shopster/static/media/oliveoil.53c95843214ce0658160.jpg",
+    "static/media/agedcheddar.jpg": "/Shopster/static/media/agedcheddar.758c343fd2c5311a4004.jpg",
+    "static/media/organic_eggs.jpg": "/Shopster/static/media/organic_eggs.f9618e8880c8f95d1637.jpg",
+    "static/media/spaghettipasta.jpg": "/Shopster/static/media/spaghettipasta.cbb7f4ee1b7017f7c9f8.jpg",
+    "static/media/premiumcoffee.jpg": "/Shopster/static/media/premiumcoffee.5b116b67a5ddddef6a57.jpg",
+    "static/media/handcraftedsausages.jpg": "/Shopster/static/media/handcraftedsausages.7a6e4d738171ce78afaf.jpg",
+    "static/media/greentea.jpg": "/Shopster/static/media/greentea.4956c14df8a590c5d611.jpg",
+    "static/media/organicapples.jpg": "/Shopster/static/media/organicapples.fd0b0d29c479716f391e.jpg",
+    "static/media/artisanbread.jpg": "/Shopster/static/media/artisanbread.0a5b93246536d5a9d6ee.jpg",
+    "static/media/shopster-high-resolution-logo-transparent.png": "/Shopster/static/media/shopster-high-resolution-logo-transparent.f14a53f6440eeeeebb8c.png",
+    "index.html": "/Shopster/index.html",
+    "main.d4470d26.css.map": "/Shopster/static/css/main.d4470d26.css.map",
+    "main.50794ffd.js.map": "/Shopster/static/js/main.50794ffd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4470d26.css",
+    "static/js/main.50794ffd.js"
+  ]
+}
