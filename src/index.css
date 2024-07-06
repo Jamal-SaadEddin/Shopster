@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+body {
+    margin: 0;
+}
+
+.nav-logo {
+    width: 40px;
+}
+
+@media (min-width: 600px) {
+    .nav-logo {
+      width: 45px;
+    }
+  }
