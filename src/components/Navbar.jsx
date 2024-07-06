@@ -125,9 +125,17 @@ const Navbar = () => {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ px: { xs: 0, md: 10, lg: 15, xl: 35 } }}>
-        <Toolbar>
+    <>
+      <AppBar
+        position="sticky"
+        sx={{
+          px: { xs: 2, md: 10, lg: 15, xl: 35 },
+          bgcolor: "#ED6C01",
+          top: 0,
+          zIndex: 1000,
+        }}
+      >
+        <Toolbar style={{ padding: 0 }}>
           <Link
             to="/"
             style={{
@@ -198,7 +206,7 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-    </Box>
+    </>
   );
 };
 
