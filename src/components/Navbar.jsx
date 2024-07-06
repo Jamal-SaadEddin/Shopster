@@ -96,7 +96,7 @@ const Navbar = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+      <Link to="/Shopster/" style={{ textDecoration: "none", color: "black" }}>
         <MenuItem>
           <IconButton size="large" aria-label="open store" color="inherit">
             <StorefrontIcon />
@@ -104,7 +104,10 @@ const Navbar = () => {
           <p>Store Page</p>
         </MenuItem>
       </Link>
-      <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
+      <Link
+        to="/Shopster/about"
+        style={{ textDecoration: "none", color: "black" }}
+      >
         <MenuItem>
           <IconButton
             size="large"
@@ -116,7 +119,10 @@ const Navbar = () => {
           <p>About Us</p>
         </MenuItem>
       </Link>
-      <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
+      <Link
+        to="/Shopster/cart"
+        style={{ textDecoration: "none", color: "black" }}
+      >
         <MenuItem>
           <IconButton
             size="large"
@@ -145,7 +151,7 @@ const Navbar = () => {
       >
         <Toolbar style={{ padding: 0 }}>
           <Link
-            to="/"
+            to="/Shopster/"
             style={{
               textDecoration: "none",
               color: "white",
@@ -167,11 +173,14 @@ const Navbar = () => {
           </Link>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Link
+              to="/Shopster/"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               <Typography variant="body1">Store</Typography>
             </Link>
             <Link
-              to="/about"
+              to="/Shopster/about"
               style={{ textDecoration: "none", color: "white" }}
             >
               <Typography variant="body1">About</Typography>
@@ -188,7 +197,10 @@ const Navbar = () => {
               onInput={(e) => handleSearch(e.target.value)}
             />
           </Search>
-          <Link to="/cart" style={{ textDecoration: "none", color: "white" }}>
+          <Link
+            to="/Shopster/cart"
+            style={{ textDecoration: "none", color: "white" }}
+          >
             <IconButton
               size="large"
               aria-label="open shopping cart"

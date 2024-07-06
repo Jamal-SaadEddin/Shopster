@@ -103,7 +103,9 @@ const InCart_Items = ({ brief = false }) => {
           <Button
             variant="contained"
             size="large"
-            onClick={() => navigate(cart.length > 0 ? "/checkout" : "/")}
+            onClick={() =>
+              navigate(cart.length > 0 ? "/Shopster/checkout" : "/Shopster/")
+            }
           >
             {cart.length > 0 ? "Go to checkout" : "Discover Products"}
           </Button>
