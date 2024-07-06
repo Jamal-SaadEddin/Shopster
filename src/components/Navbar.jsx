@@ -17,6 +17,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import APP_LOGO from "../assets/shopster-favicon-white.png";
 import { useCart } from "../contexts/CartContext";
+import { useProductsDispatch } from "../contexts/ProductsContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,6 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const productsDispatch = useProductsDispatch();
   const cart = useCart();
   const cartItemsCount = cart.reduce((acc, item) => (acc += item.count), 0);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -71,6 +73,10 @@ const Navbar = () => {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const handleSearch = (query) => {
+    productsDispatch({ type: "filter", query: query });
   };
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -179,6 +185,7 @@ const Navbar = () => {
             <StyledInputBase
               placeholder="Search product…"
               inputProps={{ "aria-label": "search" }}
+              onInput={(e) => handleSearch(e.target.value)}
             />
           </Search>
           <Link to="/cart" style={{ textDecoration: "none", color: "white" }}>

@@ -1,7 +1,10 @@
 import { Grid } from "@mui/material";
+import { useProducts } from "../contexts/ProductsContext";
 import ProductCard from "./ProductCard";
 
-const Products = ({ products }) => {
+const Products = () => {
+  const products = useProducts();
+
   return (
     <Grid container spacing={{ xs: 3, md: 4, lg: 5, xl: 7 }}>
       {products.map((product) => (
