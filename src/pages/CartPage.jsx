@@ -1,5 +1,5 @@
 import { Paper, Typography } from "@mui/material";
-import InCartItems from "../components/InCart_Items";
+import CartItems from "../components/CartItems";
 import { useCart } from "../contexts/CartContext";
 
 const CartPage = () => {
@@ -16,7 +16,7 @@ const CartPage = () => {
           {`Items Added (${cartItemsCount})`}
         </Typography>
       )}
-      <InCartItems />
+      <CartItems />
     </Paper>
   );
 };

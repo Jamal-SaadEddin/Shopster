@@ -3,7 +3,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Button, IconButton, Stack, Typography } from "@mui/material";
 import { useCartDispatch } from "../../contexts/CartContext";
 
-const ItemActions = ({ item, brief }) => {
+const ItemActions = ({ item, WithoutActions }) => {
   const cartDispatch = useCartDispatch();
 
   return (
@@ -15,7 +15,7 @@ const ItemActions = ({ item, brief }) => {
         <Typography variant="h6" color="#ed6c02">
           Price: ${(item.price * item.count).toFixed(2)}
         </Typography>
-        {!brief && (
+        {!WithoutActions && (
           <Stack direction="row" width="fit-content">
             <IconButton
               aria-label="remove 1 item from cart"
@@ -34,7 +34,7 @@ const ItemActions = ({ item, brief }) => {
           </Stack>
         )}
       </Stack>
-      {!brief && (
+      {!WithoutActions && (
         <Stack
           direction="column"
           justifyContent={{ xs: "start", md: "center" }}

@@ -1,5 +1,5 @@
 import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
-import InCartItems from "../components/InCart_Items";
+import CartItems from "../components/CartItems";
 import { useCart } from "../contexts/CartContext";
 
 const CheckoutPage = () => {
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
           <Typography variant="h6" color="#ed6c02" gutterBottom>
             {`Items Added (${cartItemsCount})`}
           </Typography>
-          <InCartItems brief />
+          <CartItems WithoutActions />
         </Paper>
       </Grid>
     </Grid>

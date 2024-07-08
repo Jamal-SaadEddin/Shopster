@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import CartItem from "./CartItem";
 
-const InCart_Items = ({ brief = false }) => {
+const CartItems = ({ WithoutActions = false }) => {
   const navigate = useNavigate();
   const cart = useCart();
 
@@ -15,14 +15,14 @@ const InCart_Items = ({ brief = false }) => {
   return (
     <Grid container pt={2} gap={{ xs: 5, md: 2 }}>
       {cart.map((item) => (
-        <CartItem item={item} brief={brief} key={item.id} />
+        <CartItem item={item} WithoutActions={WithoutActions} key={item.id} />
       ))}
       <Grid item width="100%">
         <Typography variant="h5" color="#ed6c02">
           Total Amount: ${totalAmount.toFixed(2)}
         </Typography>
       </Grid>
-      {!brief && (
+      {!WithoutActions && (
         <Grid item width="100%">
           <Button
             variant="contained"
@@ -39,4 +39,4 @@ const InCart_Items = ({ brief = false }) => {
   );
 };
 
-export default InCart_Items;
+export default CartItems;
