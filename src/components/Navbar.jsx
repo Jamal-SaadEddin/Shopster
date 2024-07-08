@@ -1,63 +1,21 @@
 import InfoIcon from "@mui/icons-material/Info";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import InputBase from "@mui/material/InputBase";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { alpha, styled } from "@mui/material/styles";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import APP_LOGO from "../assets/shopster-favicon-white.png";
 import { useCart } from "../contexts/CartContext";
 import { useProductsDispatch } from "../contexts/ProductsContext";
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
+import SearchInput from "./SearchInput";
 
 const Navbar = () => {
   const productsDispatch = useProductsDispatch();
@@ -187,16 +145,7 @@ const Navbar = () => {
             </Link>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search product…"
-              inputProps={{ "aria-label": "search" }}
-              onInput={(e) => handleSearch(e.target.value)}
-            />
-          </Search>
+          <SearchInput onSearch={handleSearch} />
           <Link
             to="/Shopster/cart"
             style={{ textDecoration: "none", color: "white" }}
