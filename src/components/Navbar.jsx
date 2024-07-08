@@ -1,13 +1,9 @@
-import InfoIcon from "@mui/icons-material/Info";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import StorefrontIcon from "@mui/icons-material/Storefront";
 import AppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
@@ -15,19 +11,16 @@ import { Link } from "react-router-dom";
 import APP_LOGO from "../assets/shopster-favicon-white.png";
 import { useCart } from "../contexts/CartContext";
 import { useProductsDispatch } from "../contexts/ProductsContext";
+import MobileMenu from "./MobileMenu";
 import SearchInput from "./SearchInput";
+
+const MOBILE_MENU_ID = "primary-search-account-menu-mobile";
 
 const Navbar = () => {
   const productsDispatch = useProductsDispatch();
   const cart = useCart();
   const cartItemsCount = cart.reduce((acc, item) => (acc += item.count), 0);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -36,66 +29,6 @@ const Navbar = () => {
   const handleSearch = (query) => {
     productsDispatch({ type: "filter", query: query });
   };
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <Link to="/Shopster/" style={{ textDecoration: "none", color: "black" }}>
-        <MenuItem>
-          <IconButton size="large" aria-label="open store" color="inherit">
-            <StorefrontIcon />
-          </IconButton>
-          <p>Store Page</p>
-        </MenuItem>
-      </Link>
-      <Link
-        to="/Shopster/about"
-        style={{ textDecoration: "none", color: "black" }}
-      >
-        <MenuItem>
-          <IconButton
-            size="large"
-            aria-label="open shopping cart"
-            color="inherit"
-          >
-            <InfoIcon />
-          </IconButton>
-          <p>About Us</p>
-        </MenuItem>
-      </Link>
-      <Link
-        to="/Shopster/cart"
-        style={{ textDecoration: "none", color: "black" }}
-      >
-        <MenuItem>
-          <IconButton
-            size="large"
-            aria-label="open shopping cart"
-            color="inherit"
-          >
-            <Badge badgeContent={cartItemsCount} color="error">
-              <ShoppingCartIcon />
-            </Badge>
-          </IconButton>
-          <p>Shopping Cart</p>
-        </MenuItem>
-      </Link>
-    </Menu>
-  );
 
   return (
     <>
@@ -165,7 +98,7 @@ const Navbar = () => {
             <IconButton
               size="large"
               aria-label="show more"
-              aria-controls={mobileMenuId}
+              aria-controls={MOBILE_MENU_ID}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
@@ -175,7 +108,12 @@ const Navbar = () => {
           </Box>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
+      <MobileMenu
+        mobileMoreAnchorEl={mobileMoreAnchorEl}
+        setMobileMoreAnchorEl={setMobileMoreAnchorEl}
+        cartItemsCount={cartItemsCount}
+        MOBILE_MENU_ID={MOBILE_MENU_ID}
+      />
     </>
   );
 };
