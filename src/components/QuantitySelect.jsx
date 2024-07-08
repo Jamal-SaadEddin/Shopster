@@ -1,15 +1,11 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const QuantityOptions = ({ optionsCount, quantity, onSelectQuantity }) => {
-  const menuItems = [];
-
-  for (let i = 1; i <= optionsCount; i++) {
-    menuItems.push(
-      <MenuItem value={i} key={i}>
-        {i}
-      </MenuItem>
-    );
-  }
+  const menuItems = [...Array(optionsCount)].map((_, i) => (
+    <MenuItem value={i + 1} key={i + 1}>
+      {i + 1}
+    </MenuItem>
+  ));
 
   return (
     <Select
